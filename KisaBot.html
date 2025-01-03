@@ -1,67 +1,88 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
     <meta charset="UTF-8">
-    <meta name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Kisa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Простой интерфейс</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
-        * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+        /* Системные переменные для цветов */
+        :root {
+            --background-light: #f0f0f0;
+            --background-dark: #181818;
+            --text-light: #333;
+            --text-dark: #fff;
+            --button-light: #4CAF50;
+            --button-dark: #45a049;
         }
+
+        /* Базовые стили */
         body {
-            font-family: 'Amatic SC', sans-serif;
-	        color: var(--tg-theme-text-color);
-	        background: var(--tg-theme-bg-color);
-		display: flex;
-		flex-direction: column;
-	        align-items: center;
-	        font-size: 70px;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: var(--background-light);
+            color: var(--text-light);
         }
-        #cat {
-            font-family: 'Amatic SC', sans-serif;
-            background: var(--tg-theme-button-color);
-	    color: var(--tg-theme-button-text-color);
-	    font-size: 18px;
-        }
-        #main {
-            width: 100%;
-            padding: 20px;
+
+        .content {
             text-align: center;
         }
-        h1 {
-        margin-top: 0px;
-        margin-bottom: 0px;
-        }
-        img {
-        width: 170px;
-        margin: 3px auto;
-        }
-        p {
-            width: 10px;
-            margin: 0 auto;
-        }
-        button {
 
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background-color: var(--button-light);
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: var(--button-dark);
+        }
+
+        /* Адаптация под тёмную тему */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: var(--background-dark);
+                color: var(--text-dark);
+            }
+
+            .button {
+                background-color: var(--button-dark);
+            }
+
+            .button:hover {
+                background-color: var(--button-light);
+            }
         }
     </style>
 </head>
 <body>
-    <div id="main">
-        <h1>Кискин Бот</h1>
-        <img src="https://sun9-6.userapi.com/impg/_5gXGRfPxt334Vl781Q1SYWK_bN2zuSBI274iQ/Mc1ZoBhN8oM.jpg?size=1626x2160&quality=95&sign=9c1d6fdcfa262024d1a623aa4d12445a&type=album">
-        <p>Good cat</p>
-        <button id="cat", class="button">Гладить</button>
+
+    <div class="content">
+        <!-- Картинка -->
+        <img src="https://via.placeholder.com/300" alt="Пример картинки">
+
+        <!-- Надписи -->
+        <h1>Заголовок</h1>
+        <p>Это пример страницы с изображением, кнопкой и текстом, адаптированным под светлую и тёмную тему.</p>
+
+        <!-- Кнопка -->
+        <button class="button" onclick="alert('Вы нажали кнопку!')">Нажми меня</button>
     </div>
-<script src="https://telegram.org/js/telegram-web-app.js?56"></script>
-<script>
-	let tg = window.Telegram.WebApp;
-	
-</script>
+
 </body>
 </html>
