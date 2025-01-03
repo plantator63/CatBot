@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Простой интерфейс</title>
+
+    <!-- Подключение шрифта Amatic SC -->
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
         /* Системные переменные для цветов */
         :root {
             --background-light: #f0f0f0;
@@ -16,10 +19,9 @@
             --button-dark: #45a049;
         }
 
-        /* Базовые стили */
+        /* Общие стили */
         body {
-            font-family: 'Amatic SC', sans-serif;
-            font-family: Arial, sans-serif;
+            font-family: 'Amatic SC', cursive; /* Применяем шрифт Amatic SC */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -35,7 +37,7 @@
         }
 
         img {
-            max-width: 100%;
+            max-width: 15%;
             height: auto;
             margin-bottom: 20px;
         }
@@ -52,7 +54,6 @@
         }
 
         .button:hover {
-            font-family: 'Amatic SC', sans-serif;
             background-color: var(--button-dark);
         }
 
@@ -71,17 +72,33 @@
                 background-color: var(--button-light);
             }
         }
+
+        /* Стили для заголовка */
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: var(--text-light); /* Явно указываем цвет для светлой темы */
+        }
+
+        /* Стили для заголовка в тёмной теме */
+        @media (prefers-color-scheme: dark) {
+            h1 {
+                color: var(--text-dark); /* Цвет для заголовка в тёмной теме */
+            }
+        }
     </style>
 </head>
 <body>
 
     <div class="content">
+        <!-- Новый заголовок -->
         <h1>Кискин бот</h1>
+
         <!-- Картинка -->
         <img src="https://sun9-6.userapi.com/impg/_5gXGRfPxt334Vl781Q1SYWK_bN2zuSBI274iQ/Mc1ZoBhN8oM.jpg?size=1626x2160&quality=95&sign=9c1d6fdcfa262024d1a623aa4d12445a&type=album">
 
-
-        <p>Хорошая киска.</p>
+        <!-- Надписи -->
+        <p>Хорошая киска</p>
 
         <!-- Кнопка -->
         <button class="button" onclick="alert('Вы нажали кнопку!')">Гладить</button>
